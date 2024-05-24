@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Project Pythia Cookbook Template</title>
+    <title>LASSO - LES simulations with different Large-Scale forcing scales for 4th April 2019 over SGP &#8212; Project Pythia Cookbook Template</title>
   
   
   
@@ -395,7 +395,8 @@
 <div id="searchbox"></div>
                   <article class="bd-article">
                     
-  <p>LASSO - LES simulations with different Large-Scale forcing scales for 4th April 2019 over SGP</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="lasso-les-simulations-with-different-large-scale-forcing-scales-for-4th-april-2019-over-sgp">
+<h1>LASSO - LES simulations with different Large-Scale forcing scales for 4th April 2019 over SGP<a class="headerlink" href="#lasso-les-simulations-with-different-large-scale-forcing-scales-for-4th-april-2019-over-sgp" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Libraries required for this tutorial...</span>
@@ -410,7 +411,7 @@
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">pl</span>
 <span class="c1"># Plotting wrfstat variables...</span>
 <span class="kn">from</span> <span class="nn">distributed</span> <span class="kn">import</span> <span class="n">Client</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;tcp://127.0.0.1:41521&quot;</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;tcp://127.0.0.1:44455&quot;</span><span class="p">)</span>
 <span class="n">path_shcu_root</span> <span class="o">=</span> <span class="s2">&quot;/data/project/ARM_Summer_School_2024_Data/lasso_tutorial/ShCu/untar&quot;</span>  <span class="c1"># on Jupyter</span>
 
 <span class="n">case_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -442,7 +443,10 @@
 </div>
 </div>
 </div>
-<p>Advection Input to LES simulations with different forcings scale and corresponding LES output thermodynamic and Cloud time-height profiles</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="advection-input-to-les-simulations-with-different-forcings-scale-and-corresponding-les-output-thermodynamic-and-cloud-time-height-profiles">
+<h1>Advection Input to LES simulations with different forcings scale and corresponding LES output thermodynamic and Cloud time-height profiles<a class="headerlink" href="#advection-input-to-les-simulations-with-different-forcings-scale-and-corresponding-les-output-thermodynamic-and-cloud-time-height-profiles" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
+<p>Humidity and Heat coming into the LES domain due to large-scale forcings is dinstinctly different for increasing forcing scales. These also correspond to very different intensities in cloud water content and other cloud structure properties.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -499,7 +503,9 @@
 <img alt="../_images/b083b18270d97948bdbc5f204f1666fe535c583ddba00f575b2fa2aa16f49bd7.png" src="../_images/b083b18270d97948bdbc5f204f1666fe535c583ddba00f575b2fa2aa16f49bd7.png" />
 </div>
 </div>
-<p>Which of the forcing scales produces clouds close to what was observed from satellie images (GOES)?</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="which-of-the-forcing-scales-produces-clouds-close-to-what-was-observed-from-satellie-images-goes">
+<h1>Which of the forcing scales produces clouds close to what was observed from satellie images (GOES)?<a class="headerlink" href="#which-of-the-forcing-scales-produces-clouds-close-to-what-was-observed-from-satellie-images-goes" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sim_id</span><span class="o">=</span><span class="mi">6</span>
@@ -520,14 +526,35 @@
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time (UTC)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Cloud Fraction&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">ds_may_1</span><span class="o">=</span><span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;/data/project/ARM_Summer_School_2024_Data/lasso_tutorial/ShCu/untar/20190506/sim0006/obs_model/sgplassocogsdiagobsmod6C1.m1.20190506.120000.nc&#39;</span><span class="p">,</span><span class="n">decode_times</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ds_may_2</span><span class="o">=</span><span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;/data/project/ARM_Summer_School_2024_Data/lasso_tutorial/ShCu/untar/20190506/sim0007/obs_model/sgplassocogsdiagobsmod7C1.m1.20190506.120000.nc&#39;</span><span class="p">,</span><span class="n">decode_times</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ds_may_3</span><span class="o">=</span><span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;/data/project/ARM_Summer_School_2024_Data/lasso_tutorial/ShCu/untar/20190506/sim0008/obs_model/sgplassocogsdiagobsmod8C1.m1.20190506.120000.nc&#39;</span><span class="p">,</span><span class="n">decode_times</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ds_may_1</span><span class="p">[</span><span class="s2">&quot;low_cloud_fraction_cogs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">source_type</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;COGS&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ds_may_1</span><span class="p">[</span><span class="s2">&quot;low_cloud_fraction_cogs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">source_type</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Sim6&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">ds_may_2</span><span class="p">[</span><span class="s2">&quot;low_cloud_fraction_cogs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">source_type</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Sim7&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ds_may_3</span><span class="p">[</span><span class="s2">&quot;low_cloud_fraction_cogs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">source_type</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Sim8&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="c1"># If you plan to share with frieds, do a little clean-up beyond the default labelling from xarray...</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;COGS vs. WRF Cloud Fraction&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time (UTC)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Cloud Fraction&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5c2b7ddbec5d97b49e042d33be350757d172a8410b61a01fbb6ec203305d3976.png" src="../_images/5c2b7ddbec5d97b49e042d33be350757d172a8410b61a01fbb6ec203305d3976.png" />
+<img alt="../_images/ab6edab4ca8305d662c8b5ff2da0c3cf4f2fc1d40023cbaf84d90436496b6239.png" src="../_images/ab6edab4ca8305d662c8b5ff2da0c3cf4f2fc1d40023cbaf84d90436496b6239.png" />
+<img alt="../_images/c5da71e753c8177092300717376b52ee962bdbebfd66aa08226e9b351060f957.png" src="../_images/c5da71e753c8177092300717376b52ee962bdbebfd66aa08226e9b351060f957.png" />
 </div>
 </div>
-<p>How does Cloud Organization and width of maximum cloud cell changes between the three cases?</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="are-these-differences-we-notice-in-cloud-structure-statistics-reprsentative-of-whats-going-on-at-the-3-d-level">
+<h1>Are these differences we notice in Cloud structure statistics reprsentative of what’s going on at the 3-d level?<a class="headerlink" href="#are-these-differences-we-notice-in-cloud-structure-statistics-reprsentative-of-whats-going-on-at-the-3-d-level" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
+<p>To check this we track each individual cloud cells (cluster of all adjacent cloudy cells) defined by x,y dependent cloud water path (ql_path) &gt; 0.005</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Field Plots #####</span>
@@ -703,6 +730,9 @@
 </div>
 </div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="organization-index-randomness-0-or-organization-1-of-tracked-individual-cloud-cells-and-size-of-cloud-cell-with-maximum-area">
+<h1>Organization Index (Randomness (=0) or Organization (=1) of tracked individual cloud cells) and Size of Cloud Cell with maximum area<a class="headerlink" href="#organization-index-randomness-0-or-organization-1-of-tracked-individual-cloud-cells-and-size-of-cloud-cell-with-maximum-area" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pl</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -733,46 +763,32 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pl</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ds_xwrf_1</span><span class="o">.</span><span class="n">QVAPOR</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span><span class="n">levels</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
-
-
-
-<span class="n">pl</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ds_xwrf_2</span><span class="o">.</span><span class="n">QVAPOR</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span><span class="n">levels</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
-
-<span class="n">pl</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ds_xwrf_3</span><span class="o">.</span><span class="n">QVAPOR</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span><span class="n">levels</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
-
-<span class="n">pl</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ds_xwrf_1</span><span class="o">.</span><span class="n">TH_ADV</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="mi">8</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Sim-4&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;force_layers&#39;</span><span class="p">)</span>
-<span class="n">ds_xwrf_2</span><span class="o">.</span><span class="n">TH_ADV</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="mi">8</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Sim-5&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;force_layers&#39;</span><span class="p">)</span>
-<span class="n">ds_xwrf_3</span><span class="o">.</span><span class="n">TH_ADV</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="mi">8</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Sim-6&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;force_layers&#39;</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-
-<span class="n">pl</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ds_xwrf_1</span><span class="o">.</span><span class="n">QV_ADV</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="mi">8</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Sim-4&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;force_layers&#39;</span><span class="p">)</span>
-<span class="n">ds_xwrf_2</span><span class="o">.</span><span class="n">QV_ADV</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="mi">8</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Sim-5&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;force_layers&#39;</span><span class="p">)</span>
-<span class="n">ds_xwrf_3</span><span class="o">.</span><span class="n">QV_ADV</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="mi">8</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Sim-6&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;force_layers&#39;</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_stat_1</span><span class="o">.</span><span class="n">CSP_Z</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">bottom_top</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7efe92f34890&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([   0.    , 2285.5583, 2285.7964, 2285.773 , 2285.507 , 2285.0034,
+       2284.2625, 2283.3677, 2282.6804, 2282.2988, 2282.2126, 2282.411 ,
+       2282.8904, 2283.6128, 2284.4067, 2285.229 , 2286.0754, 2286.9429,
+       2287.8337, 2288.747 , 2289.6272, 2290.448 , 2291.1987, 2291.8706,
+       2292.4675, 2292.9954, 2293.466 , 2293.8843, 2294.25  , 2294.5645,
+       2294.8276, 2295.0396, 2295.2114, 2295.3445, 2295.4421, 2295.5151,
+       2295.5981, 2295.7173, 2295.9226, 2296.269 , 2296.747 , 2297.2842,
+       2297.7917, 2298.2366, 2298.6626, 2299.1216, 2299.6606, 2300.2126,
+       2300.772 , 2301.3157, 2301.8088, 2302.276 , 2302.6697, 2303.048 ,
+       2303.3533, 2303.6042, 2303.855 , 2304.0835, 2304.3071, 2304.5183,
+       2304.7456, 2304.9648, 2305.1296, 2305.2283, 2305.2942, 2305.2964,
+       2305.2324, 2305.1292, 2305.0164, 2304.896 , 2304.7715, 2304.6404,
+       2304.5166, 2304.401 , 2304.3071, 2304.2212, 2304.1655, 2304.1355,
+       2304.1272, 2304.1404, 2304.1577, 2304.1653, 2304.169 , 2304.17  ,
+       2304.1682, 2304.1606, 2304.1497, 2304.1401, 2304.1323, 2304.1245,
+       2304.1167], dtype=float32)
 </pre></div>
 </div>
-<img alt="../_images/68071ce806b8ef8f6e5f91a170bdaf0e13f444083cea4b4d5aa653eda3e926a1.png" src="../_images/68071ce806b8ef8f6e5f91a170bdaf0e13f444083cea4b4d5aa653eda3e926a1.png" />
-<img alt="../_images/e36afd84ca25d270960b451530c019890152e0a2a73193029b871d60f00181d0.png" src="../_images/e36afd84ca25d270960b451530c019890152e0a2a73193029b871d60f00181d0.png" />
-<img alt="../_images/a391cc5785f4e095af4ce03a7d1e5fe2fa0475df80ed46322c553fa5a6650022.png" src="../_images/a391cc5785f4e095af4ce03a7d1e5fe2fa0475df80ed46322c553fa5a6650022.png" />
-<img alt="../_images/a0638d7c7bbb5c742a68ad409fe76ed2a9ff1fe36f0788d1dc60edd4e18bb2ff.png" src="../_images/a0638d7c7bbb5c742a68ad409fe76ed2a9ff1fe36f0788d1dc60edd4e18bb2ff.png" />
-<img alt="../_images/a1266387cfc26bdbba5c0236a98036523c29ea122ada3ac03b86d12bb722eba4.png" src="../_images/a1266387cfc26bdbba5c0236a98036523c29ea122ada3ac03b86d12bb722eba4.png" />
-<img alt="../_images/439960283161ef47686440f94526eb03e6f185f0742abb5d51655dc434c71f6e.png" src="../_images/439960283161ef47686440f94526eb03e6f185f0742abb5d51655dc434c71f6e.png" />
 </div>
 </div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -820,7 +836,12 @@
     <i class="fa-solid fa-list"></i> On this page
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">LASSO - LES simulations with different Large-Scale forcing scales for 4th April 2019 over SGP</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#advection-input-to-les-simulations-with-different-forcings-scale-and-corresponding-les-output-thermodynamic-and-cloud-time-height-profiles">Advection Input to LES simulations with different forcings scale and corresponding LES output thermodynamic and Cloud time-height profiles</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#which-of-the-forcing-scales-produces-clouds-close-to-what-was-observed-from-satellie-images-goes">Which of the forcing scales produces clouds close to what was observed from satellie images (GOES)?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#are-these-differences-we-notice-in-cloud-structure-statistics-reprsentative-of-whats-going-on-at-the-3-d-level">Are these differences we notice in Cloud structure statistics reprsentative of what’s going on at the 3-d level?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#organization-index-randomness-0-or-organization-1-of-tracked-individual-cloud-cells-and-size-of-cloud-cell-with-maximum-area">Organization Index (Randomness (=0) or Organization (=1) of tracked individual cloud cells) and Size of Cloud Cell with maximum area</a></li>
 </ul>
 
   </nav></div>
