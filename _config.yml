@@ -7,12 +7,7 @@ logo: notebooks/images/logos/pythia_logo-white-rtext.svg
 copyright: "2024"
 
 execute:
-  # To execute notebooks via a Binder instead, replace 'cache' with 'binder'
-<<<<<<< HEAD
-  execute_notebooks: "off"
-=======
   execute_notebooks: 'off'
->>>>>>> c6e5e4140ae752390e8c68fc4d76ca4ac4ec0f04
   timeout: 600
   allow_errors: False # cells with expected failures must set the `raises-exception` cell tag
 
