@@ -2,47 +2,31 @@ cff-version: 1.2.0
 message: "If you use this cookbook, please cite it as below."
 authors:
   # add additional entries for each author -- see https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md
-  - family-names: Rose
-    given-names: Brian E. J.
-    orcid: https://orcid.org/0000-0002-9961-3821 # optional
-    website: https://github.com/brian-rose # optional
-    affiliation: University at Albany (State University of New York) # optional
-  - family-names: Kent
-    given-names: Julia
-    orcid: https://orcid.org/0000-0002-5611-8986
-    website: https://github.com/jukent
-    affiliation: UCAR/NCAR
-  - family-names: Tyle
-    given-names: Kevin
-    orcid: https://orcid.org/0000-0001-5249-9665
-    website: https://github.com/ktyle
-    affiliation: University at Albany (State University of New York)
-  - family-names: Clyne
-    given-names: John
-    orcid: https://orcid.org/0000-0003-2788-9017
-    website: https://github.com/clyne
-    affiliation: UCAR/NCAR
-  - family-names: Camron
-    given-names: Drew
-    orcid: https://orcid.org/0000-0001-7246-6502
-    website: https://github.com/dcamron
-    affiliation: UCAR/Unidata
-  - family-names: Grover
-    given-names: Maxwell
-    orcid: https://orcid.org/0000-0002-0370-8974
-    website: https://github.com/mgrover1
-    affiliation: Argonne National Laboratory
-  - family-names: Ford
-    given-names: Robert R.
-    orcid: https://orcid.org/0000-0001-5483-4965
-    website: https://github.com/r-ford
-    affiliation: University at Albany (State University of New York)
-  - family-names: Paul
-    given-names: Kevin
-    orcid: https://orcid.org/0000-0001-8155-8038
-    website: https://github.com/kmpaul
-    affiliation: NVIDIA
-  - name: "Cookbook Template contributors" # use the 'name' field to acknowledge organizations
-    website: "https://github.com/ProjectPythia/cookbook-template/graphs/contributors"
-title: "Cookbook Template"
-abstract: "A sample cookbook description."
+  - family-names: Raghunathan
+    given-names: Girish Nigamanth
+    orcid: 0000-0002-9644-2668
+    website: https://github.com/girishnigamanth
+    affiliation: Cleveland State University
+  - family-names: Ryu
+    given-names: Kyoungho
+    orcid: 0000-0002-9644-2668
+    website: https://github.com/RyuLandA24
+    affiliation: Boston University
+  - family-names: Rosenberger
+    given-names: Tessa
+    orcid: https://orcid.org/0000-0003-3320-5873
+    website: https://github.com/trosenberger2
+    affiliation: Cleveland State University
+  - family-names: Mansoura
+    given-names: Xena
+    orcid: https://orcid.org/my-orcid?orcid=0000-0001-5484-1110
+    website: https://github.com/xmansouraa
+    affiliation: PNNL
+  - family-names: Lincheck
+    given-names: Theresa
+    orcid: 0009-0005-3977-2838
+    website: https://github.com/tlincheck
+    affiliation: University of Oklahoma
+  - name: "LASSO those clouds contributors" # use the 'name' field to acknowledge organizations
+title: "LASSO Those Clouds Cookbook Template"
+abstract: "Looking at LASSO data to see large scale forcing influence on different simulations and their representation of shallow cumulus clouds"
