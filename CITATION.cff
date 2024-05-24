@@ -4,12 +4,12 @@ authors:
   # add additional entries for each author -- see https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md
   - family-names: Raghunathan
     given-names: Girish Nigamanth
-    orcid: 0000-0002-9644-2668
+    orcid: https://orcid.org/0000-0002-9644-2668
     website: https://github.com/girishnigamanth
     affiliation: Cleveland State University
   - family-names: Ryu
     given-names: Kyoungho
-    orcid: 0000-0002-9644-2668
+    orcid: https://orcid.org/0000-0002-9644-2668
     website: https://github.com/RyuLandA24
     affiliation: Boston University
   - family-names: Rosenberger
@@ -19,12 +19,12 @@ authors:
     affiliation: Cleveland State University
   - family-names: Mansoura
     given-names: Xena
-    orcid: https://orcid.org/my-orcid?orcid=0000-0001-5484-1110
+    orcid: https://orcid.org/0000-0001-5484-1110
     website: https://github.com/xmansouraa
     affiliation: PNNL
   - family-names: Lincheck
     given-names: Theresa
-    orcid: 0009-0005-3977-2838
+    orcid: https://orcid.org/0009-0005-3977-2838
     website: https://github.com/tlincheck
     affiliation: University of Oklahoma
 title: "LASSO Those Clouds Cookbook Template"
