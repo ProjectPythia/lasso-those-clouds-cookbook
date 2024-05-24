@@ -27,6 +27,5 @@ authors:
     orcid: 0009-0005-3977-2838
     website: https://github.com/tlincheck
     affiliation: University of Oklahoma
-  - name: "LASSO those clouds contributors" # use the 'name' field to acknowledge organizations
 title: "LASSO Those Clouds Cookbook Template"
 abstract: "Looking at LASSO data to see large scale forcing influence on different simulations and their representation of shallow cumulus clouds"
