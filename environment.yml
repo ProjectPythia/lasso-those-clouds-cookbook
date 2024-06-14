@@ -1,7 +1,16 @@
-name: cookbook-dev
+name: lasso-those-clouds-cookbook-dev
 channels:
   - conda-forge
 dependencies:
+  - xarray
+  - fsspec
+  - s3fs
+  - xwrf
+  - dask
+  - matplotlib
+  - metpy
+  - netcdf4
+  - h5netcdf
   - jupyter-book
   - jupyterlab
   - sphinx-pythia-theme
