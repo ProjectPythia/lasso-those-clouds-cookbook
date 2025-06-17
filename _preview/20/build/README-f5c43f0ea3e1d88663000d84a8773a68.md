@@ -1,6 +1,7 @@
+# Large Scale Forcing Impact on Shallow Cumulus Fields over SGP
+
 <img src="_static/SGPfig.png" width=300 alt="SGP">
 
-# Large Scale Forcing Impact on Shallow Cumulus Fields over SGP
 [![DOI](https://zenodo.org/badge/803957729.svg)](https://zenodo.org/doi/10.5281/zenodo.11283460)
 
 ## Group Members
