@@ -1,0 +1,35 @@
+version: 1
+extends:
+  - https://raw.githubusercontent.com/projectpythia/pythia-config/main/pythia.yml
+project:
+  title: Project Pythia Cookbook Template
+  authors:
+    - name: Project Pythia Community
+      url: https://projectpythia.org/
+  github: https://github.com/projectpythia/lasso-those-clouds-cookbook
+  copyright: '2024'
+  toc:
+    - file: README.md
+    - title: Observations for April 4, 2019
+      children:
+        - file: notebooks/LassoARMClouds.ipynb
+    - title: LASSO Simulation April 4, 2019 - Cloud base and Top
+      children:
+        - file: notebooks/Calc_cloud_base_and_top.ipynb
+    - title: LASSO Simulation April 4, 2019 - Surface Moisture Convergence
+      children:
+        - file: notebooks/moisture_divergence.ipynb
+    - title: LASSO Simulation April 4, 2019 - Forcings TKE
+      children:
+        - file: notebooks/ForcingLTKE.ipynb
+    - title: LASSO Simulation April 4, 2019 - Cloud Organization
+      children:
+        - file: notebooks/cloud_organization.ipynb
+  jupyter:
+      binder:
+        repo: projectpythia/lasso-those-clouds-cookbook
+site:
+  options:
+    logo: notebooks/images/logos/pythia_logo-white-rtext.svg
+    folders: true
+  template: book-theme
